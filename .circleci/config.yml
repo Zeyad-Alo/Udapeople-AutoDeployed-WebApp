@@ -249,8 +249,8 @@ jobs:
       - run:
           name: Get backend url
           command: |
-            export BACKEND_IP=$(aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --filters "Name=tag:Name,Values=backend-${CIRCLE_WORKFLOW_ID:0:7}")
-            curl --insecure https://kvdb.io/2TRkrpsLYb7hbsyyA2BVaK/migration_$\{CIRCLE_WORKFLOW_ID:0:7\}  -d 'BACKEND_IP'
+            export BACKEND_IP=$(aws ec2 describe-instances --query 'Reservations[*].Instances[*].PublicIpAddress' --filters "Name=tag:Name,Values=backend-${CIRCLE_WORKFLOW_ID:0:7}" --output text)
+            curl --insecure https://kvdb.io/2TRkrpsLYb7hbsyyA2BVaK/migration_${CIRCLE_WORKFLOW_ID:0:7}/IP  -d '${BACKEND_IP}'
             export API_URL="http://${BACKEND_IP}:3030"
             echo "API_URL = ${API_URL}"
             echo API_URL="http://${BACKEND_IP}:3030" >> frontend/.env
@@ -316,7 +316,7 @@ jobs:
       - run:
           name: Get backend url
           command: |
-            export BACKEND_IP=$(curl --insecure https://kvdb.io/2TRkrpsLYb7hbsyyA2BVaK/migration_$\{CIRCLE_WORKFLOW_ID:0:7\})
+            export BACKEND_IP=$(curl --insecure https://kvdb.io/2TRkrpsLYb7hbsyyA2BVaK/migration_${CIRCLE_WORKFLOW_ID:0:7}/IP)
       - run:
           name: Backend smoke test.
           command: |
