@@ -11,27 +11,28 @@ commands:
           name: Destroy environments
           when: on_fail
           command: |
+            echo "Destroying environment: << parameters.id >> "
             aws cloudformation delete-stack --stack-name udapeople-backend-${<<parameters.id>>:0:7}
             aws cloudformation delete-stack --stack-name udapeople-frontend-${<<parameters.id>>:0:7}
 
-#   revert-migrations:
-#     description: Revert the last migration if successfully run in the current workflow.
-#     parameters:
-#       # Add parameter here     
-#     steps:
-#       - run:
-#           name: Revert migrations
-#           # Add when this will run
-#           command: |
-#             # Curl command here to see if there was a successful migration associated with the workflow id, store result in SUCCESS variable
-#             SUCCESS = 1
-#             if(( $SUCCESS==1 )); 
-#             then
-#             #  cd ~/project/backend
-#             #  npm install
-#             #  Add revert code here. You can find this in the Getting Started section.
-#               exit 1
-#             fi
+  revert-migrations:
+    description: Revert the last migration
+    parameters:
+        id:
+            type: string      
+    steps:
+        - run:
+            name: Revert migrations
+            when: on_fail
+            command: |
+                SUCCESS=$(curl --insecure  https://kvdb.io/2TRkrpsLYb7hbsyyA2BVaK/migration_${<<parameters.id>>:0:7})
+                # Logic for reverting the database state
+                if (( $SUCCESS == 1 ));
+                then
+                    cd ~/project/backend
+                    npm install
+                    npm run migration:revert
+                fi  
             
 jobs:
   build-frontend:
@@ -306,16 +307,13 @@ jobs:
 
   smoke-test:
     docker:
-      - image: alpine:latest
+      - image: python:3.7-alpine3.11
     steps:
       - checkout
       - run:
           name: Install dependencies
           command: |
-            apk add --update curl
-      - run:
-          name: Install aws cli
-          command: |
+            apk add --no-cache curl
             curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
             unzip awscliv2.zip
             ./aws/install
@@ -348,6 +346,9 @@ jobs:
             fi
       - destroy-environment:
           id: CIRCLE_WORKFLOW_ID
+      - revert-migrations:
+          id: CIRCLE_WORKFLOW_ID
+
 
 #   cloudfront-update:
 #     docker:
