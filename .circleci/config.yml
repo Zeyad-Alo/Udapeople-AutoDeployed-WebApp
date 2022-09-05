@@ -184,15 +184,19 @@ jobs:
       - checkout
       - add_ssh_keys:
           fingerprints: ["f3:d3:97:f5:45:a1:6a:d3:a0:92:c1:a0:2a:b3:b3:ea"]
-      - persist_to_workspace:
-          root: ~/
-          paths:
-            - build/*
+      - attach_workspace:
+          at: ~/
       - run:
           name: Install dependencies
           command: |
             yum install -y tar gzip
             apk add --update ansible
+      - run:
+          name: Install aws cli
+          command: |
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
       - run:
           name: Configure server
           command: |
@@ -274,6 +278,12 @@ jobs:
             yum install -y tar gzip
             apk add nodejs npm
             apk add --update ansible
+      - run:
+          name: Install aws cli
+          command: |
+            curl "https://awscli.amazonaws.com/awscli-exe-linux-x86_64.zip" -o "awscliv2.zip"
+            unzip awscliv2.zip
+            sudo ./aws/install
       - run:
           name: Deploy backend
           command: |
