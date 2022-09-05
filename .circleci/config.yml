@@ -243,7 +243,7 @@ jobs:
           name: Install dependencies
           command: |
             yum install -y tar gzip
-            apk add nodejs npm
+            yum install nodejs npm
       - attach_workspace:
           at: ~/
       - run:
