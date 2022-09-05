@@ -182,19 +182,20 @@ jobs:
       - image: python:3.7-alpine3.11
     steps:
       - checkout
-      
-      # attach workspace
+      - add_ssh_keys:
+          fingerprints: ["f3:d3:97:f5:45:a1:6a:d3:a0:92:c1:a0:2a:b3:b3:ea"]
+      - attach_workspace:
+          at: ~/
       - run:
           name: Install dependencies
           command: |
-            # Your code here
-            exit 1
+            yum install -y tar gzip
+            apk add --update ansible
       - run:
           name: Configure server
           command: |
-            # Your code here
-            exit 1
-      # Here's where you will add some code to rollback on failure      
+            cd .circleci/ansible
+            ansible-playbook -i inventory.txt configure-server.yml  
 
 #   run-migrations:
 #     docker:
