@@ -327,7 +327,7 @@ jobs:
             npm run build
             npm run prestart:prod
             
-            cd /root/project/
+            cd ~/
             tar -zcvf artifact.tar.gz backend/
             mv artifact.tar.gz ~/project/.circleci/ansible/roles/deploy/files/
 
