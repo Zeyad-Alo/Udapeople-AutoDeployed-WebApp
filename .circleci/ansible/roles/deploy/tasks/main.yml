@@ -2,7 +2,7 @@
 - name: "extract artifact"
   unarchive:
     src: artifact.tar.gz
-    dest: ~/
+    dest: /home/ubuntu/
 
 - name: "start app"
   shell: |
@@ -10,7 +10,7 @@
     npm install
     pm2 stop default
     pm2 start npm -- start
-    pm2 start main.js
+    pm2 start npm --name 'udapeople' -- start
 
 - name: "Configure pm2 to start as service"
   shell: |
