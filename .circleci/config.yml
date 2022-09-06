@@ -282,7 +282,7 @@ jobs:
           name: Install dependencies
           command: |
             pip install nodejs npm
-            apk add --update ansible
+            python3 -m pip install --user ansible
       - run:
           name: Install aws cli
           command: |
