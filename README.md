@@ -10,56 +10,58 @@ In this project, you will prove your mastery of the following learning objective
 ## Project Submission
 
 ### 🔗 URLS
+
 - **[URL01]**: <a href="https://github.com/Zeyad-Alo/Udapeople-AutoDeployed-WebApp">GitHub Repo</a>
-- **[URL02]**: <a href="https://github.com/Zeyad-Alo/Udapeople-AutoDeployed-WebApp">S3 Bucket Public URL</a>
+- **[URL02]**: <a href="http://udapeople-f9ddff0.s3-website-us-east-1.amazonaws.com">S3 Bucket Public URL</a>
 
-- **[URL03SCREENSHOT]**:
-![CloudFront](./screenshots/URL03SCREENSHOT.png)
+- **[URL03_SCREENSHOT]**:  
+![CloudFront](./screenshots/URL03_SCREENSHOT.png)
 
-- **[URL04SCREENSHOT]**:
-![Backend](./screenshots/URL04SCREENSHOT.png)
+- **[URL04_SCREENSHOT]**:  
+![Backend](./screenshots/URL04_SCREENSHOT.png)
 
-- **[URL05SCREENSHOT]**:
-![Prometheus](./screenshots/URL04SCREENSHOT.png)
+- **[URL05_SCREENSHOT]**:  
+![Prometheus](./screenshots/URL05_SCREENSHOT.png)
 
 
 ### SCREENSHOTS
- - **[SCREENSHOT01]**:
+
+ - **[SCREENSHOT01]**:  
 ![Compile E\error](./screenshots/SCREENSHOT01.png)
 
-- **[SCREENSHOT02]**:
+- **[SCREENSHOT02]**:  
 ![Unit test error](./screenshots/SCREENSHOT02.png)
 
-- **[SCREENSHOT03]**:
+- **[SCREENSHOT03]**:  
 ![Scan error](./screenshots/SCREENSHOT03.png)
 
- - **[SCREENSHOT04]**:
+ - **[SCREENSHOT04]**:  
 ![Alert](./screenshots/SCREENSHOT04.png)
 
-- **[SCREENSHOT05]**:
+- **[SCREENSHOT05]**:  
 ![Infrastructure error](./screenshots/SCREENSHOT05.png)
 
-- **[SCREENSHOT06]**:
+- **[SCREENSHOT06]**:  
 ![Smoke test error](./screenshots/SCREENSHOT06.png)
 
- - **[SCREENSHOT07]**:
+ - **[SCREENSHOT07]**:  
 ![Rollback](./screenshots/SCREENSHOT07.png)
 
-- **[SCREENSHOT08]**:
+- **[SCREENSHOT08]**:  
 ![Promotion](./screenshots/SCREENSHOT08.png)
 
-- **[SCREENSHOT09]**:
+- **[SCREENSHOT09]**:  
 ![Cleanup](./screenshots/SCREENSHOT09.png)
 
-- **[SCREENSHOT10]**:
+- **[SCREENSHOT10]**:  
 ![Filter](./screenshots/SCREENSHOT10.png)
 
-- **[SCREENSHOT11]**:
-![Memory metrics](./screenshots/SCREENSHOT11-1.png)
-![CPU metrics](./screenshots/SCREENSHOT11-2.png)
-![Disk metrics](./screenshots/SCREENSHOT11-3.png)
+- **[SCREENSHOT11]**:  
+![Memory metrics](./screenshots/SCREENSHOT11-1.png)  
+![CPU metrics](./screenshots/SCREENSHOT11-2.png)  
+![Disk metrics](./screenshots/SCREENSHOT11-3.png)  
 
-- **[SCREENSHOT12]**:
+- **[SCREENSHOT12]**:  
 ![Alert-Prometheus](./screenshots/SCREENSHOT12.png)
 
 
