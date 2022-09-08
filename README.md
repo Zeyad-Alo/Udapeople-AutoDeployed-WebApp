@@ -11,8 +11,12 @@ In this project, you will prove your mastery of the following learning objective
 
 ### 🔗 URLS
 
-- **[URL01]**: <a href="https://github.com/Zeyad-Alo/Udapeople-AutoDeployed-WebApp">GitHub Repo</a>
-- **[URL02]**: <a href="http://udapeople-f9ddff0.s3-website-us-east-1.amazonaws.com">S3 Bucket Public URL</a>
+- **[URL01]**: <a href="https://github.com/Zeyad-Alo/Udapeople-AutoDeployed-WebApp">GitHub Repo</a>  
+- **[URL02]**: <a href="http://udapeople-f9ddff0.s3-website-us-east-1.amazonaws.com">S3 Bucket Public URL</a>  
+- **[URL02_SCREENSHOT]**:  
+![S3](./screenshots/WORKING_FRONTEND.png)  
+![S3](./screenshots/WORKING_BACKEND.png)  
+- **[URL03]**: <a href="http://d3c39ilr0sz4ps.cloudfront.net/">CloudFront URL</a>
 
 - **[URL03_SCREENSHOT]**:  
 ![CloudFront](./screenshots/URL03_SCREENSHOT.png)
